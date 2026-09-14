@@ -1,35 +1,85 @@
 {
   "skill": "ausgleich",
-  "version": 1,
+  "version": 2,
+  "notes": "图片均为 scripts/make_test_receipts.py 生成的合成凭证，可用该脚本重生成。",
   "cases": [
     {
       "id": "cny-only-even",
       "prompt": "Alice 付了 100 元晚饭，Bob 付了 40 元打车，都是人民币，帮我结算。",
+      "images": [
+        "examples/evals/receipt-cny-dinner.png",
+        "examples/evals/receipt-cny-taxi.png"
+      ],
+      "expected_recognition": [
+        {
+          "item": "海底捞",
+          "currency": "CNY",
+          "amount": 100
+        },
+        {
+          "item": "滴滴出行",
+          "currency": "CNY",
+          "amount": 40
+        }
+      ],
       "expected": [
         "共同支出 140.00，人均 70.00",
         "Alice 净额 +30.00，Bob 净额 -30.00",
         "结论：Bob 转给 Alice ¥30.00"
       ],
-      "must_not": ["做结算之外的写操作"]
+      "must_not": [
+        "做结算之外的写操作"
+      ]
     },
     {
       "id": "hkd-mixed",
       "prompt": "把这两张图记进去：一张是 HK$428 的海底捞我付的，一张是 68 元人民币星巴克对方付的。汇率用 0.8568。",
+      "images": [
+        "examples/evals/receipt-hkd-hotpot.png",
+        "examples/evals/receipt-cny-starbucks.png"
+      ],
+      "expected_recognition": [
+        {
+          "item": "海底捞",
+          "currency": "HKD",
+          "amount": 428
+        },
+        {
+          "item": "星巴克",
+          "currency": "CNY",
+          "amount": 68
+        }
+      ],
       "expected": [
         "HKD 记录按 0.8568 折合 CNY（428 -> 366.71）",
         "CNY 记录汇率自动填 1.0",
         "先给识别汇总，再写入"
       ],
-      "must_not": ["静默写入 汇率=0", "猜测看不清的金额"]
+      "must_not": [
+        "静默写入 汇率=0",
+        "猜测看不清的金额"
+      ]
     },
     {
       "id": "ambiguous-receipt",
       "prompt": "这张截图有点糊，好像是打车 88 或 38，你看下。",
+      "images": [
+        "examples/evals/receipt-blurry-taxi.png"
+      ],
+      "expected_recognition": [
+        {
+          "currency": "CNY",
+          "confidence_lt": 0.5,
+          "doubt_nonempty": true
+        }
+      ],
       "expected": [
         "压低 confidence（< 0.5）并在 doubt 说明哪一位看不清",
         "先问用户确认，不直接写账"
       ],
-      "must_not": ["擅自选一个数字写入"]
+      "must_not": [
+        "擅自选一个数字写入"
+      ]
     }
   ]
 }

@@ -176,10 +176,11 @@ python3 scripts/make_demo.py
 
 产物：`examples/sample-settlement.json`、`docs/sample-settlement.svg`、`docs/sample-settlement.html`。
 
-重录首屏 GIF（依赖 Pillow）：
+重录首屏 GIF（二选一）：
 
 ```bash
-python3 scripts/make_gif.py
+python3 scripts/make_gif.py   # Pillow 路线，无外部二进制依赖
+vhs docs/demo.tape             # vhs 路线，需先 brew install vhs
 ```
 
 口径回归测试（四舍五入、缺汇率报错、双入口对称）：

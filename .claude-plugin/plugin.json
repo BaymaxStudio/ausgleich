@@ -1,0 +1,18 @@
+{
+  "name": "ausgleich",
+  "version": "0.1.0",
+  "description": "Two-person AA expense splitting from payment screenshots, settled in a Feishu Bitable ledger.",
+  "author": {
+    "name": "Baymax Studio"
+  },
+  "homepage": "https://github.com/BaymaxStudio/ausgleich",
+  "repository": "https://github.com/BaymaxStudio/ausgleich",
+  "license": "MIT",
+  "keywords": [
+    "aa-split",
+    "expense",
+    "feishu",
+    "lark",
+    "agent-skill"
+  ]
+}

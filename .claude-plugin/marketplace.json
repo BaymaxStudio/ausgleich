@@ -1,0 +1,18 @@
+{
+  "name": "ausgleich",
+  "description": "Two-person AA expense splitting with payment-screenshot capture and a Feishu Bitable ledger.",
+  "owner": {
+    "name": "Baymax Studio"
+  },
+  "plugins": [
+    {
+      "name": "ausgleich",
+      "source": "./",
+      "description": "Split two-person shared expenses from payment screenshots into a Feishu Bitable ledger with formula-driven settlement.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Baymax Studio"
+      }
+    }
+  ]
+}

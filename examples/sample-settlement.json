@@ -1,0 +1,21 @@
+{
+  "total": 563.23,
+  "share": 281.62,
+  "people": [
+    {
+      "name": "Alice",
+      "paid": 409.55,
+      "share": 281.62,
+      "net": 127.93
+    },
+    {
+      "name": "Bob",
+      "paid": 153.68,
+      "share": 281.62,
+      "net": -127.94
+    }
+  ],
+  "from": "Bob",
+  "to": "Alice",
+  "amount": 127.94
+}

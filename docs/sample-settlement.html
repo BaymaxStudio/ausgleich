@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AUSGLEICH 结算样例</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; padding: 40px 20px; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f1f5f9; color: #0f172a; }
+  .card { max-width: 640px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px; }
+  h1 { font-size: 24px; margin: 0 0 6px; }
+  p.sub { color: #64748b; margin: 0 0 24px; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 12px 8px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+  th { color: #94a3b8; font-weight: 500; font-size: 13px; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .pos { color: #0f766e; }
+  .neg { color: #b91c1c; }
+  .concl { margin-top: 24px; font-size: 20px; font-weight: 700; color: #0f766e; }
+  .foot { margin-top: 8px; color: #64748b; font-size: 13px; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f172a; color: #e2e8f0; }
+    .card { background: #1e293b; border-color: #334155; }
+    th, td { border-color: #334155; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>AUSGLEICH 结算样例</h1>
+    <p class="sub">合成数据 · 双入口各记各的 · 两边各跑一次，数字对得上才算数</p>
+    <table>
+      <thead><tr><th>成员</th><th class="num">实付 CNY</th><th class="num">净额 CNY</th></tr></thead>
+      <tbody>
+<tr><td>Alice</td><td class="num">409.55</td><td class="num pos">+127.93</td></tr>
+<tr><td>Bob</td><td class="num">153.68</td><td class="num neg">-127.94</td></tr>
+      </tbody>
+    </table>
+    <p>共同支出 CNY 563.23，人均 281.62</p>
+    <p class="concl">Bob 转给 Alice ¥127.94</p>
+    <p class="foot">由 scripts/make_demo.py 用合成数据生成，可随时重跑复现。</p>
+  </div>
+</body>
+</html>

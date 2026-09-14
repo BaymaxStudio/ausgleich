@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360" viewBox="0 0 720 360" role="img" aria-label="AUSGLEICH 结算样例">
+  <rect width="720" height="360" fill="#f8fafc"/>
+  <rect x="24" y="24" width="672" height="312" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="56" y="76" font-size="24" font-weight="bold" fill="#0f172a">AUSGLEICH 结算样例</text>
+  <text x="56" y="106" font-size="15" fill="#64748b">合成数据 · 双入口各记各的 · 两边各跑一次，数字对得上才算数</text>
+  <line x1="56" y1="126" x2="664" y2="126" stroke="#e2e8f0"/>
+  <text x="56" y="150" font-size="14" fill="#94a3b8">成员</text>
+  <text x="300" y="150" font-size="14" fill="#94a3b8" text-anchor="end">实付 CNY</text>
+  <text x="620" y="150" font-size="14" fill="#94a3b8" text-anchor="end">净额 CNY</text>
+  <text x="56" y="168" font-size="19" fill="#1f2937">Alice</text><text x="300" y="168" font-size="19" fill="#374151" text-anchor="end">409.55</text><text x="620" y="168" font-size="19" fill="#0f766e" text-anchor="end">+127.93</text>
+<text x="56" y="212" font-size="19" fill="#1f2937">Bob</text><text x="300" y="212" font-size="19" fill="#374151" text-anchor="end">153.68</text><text x="620" y="212" font-size="19" fill="#b91c1c" text-anchor="end">-127.94</text>
+  <line x1="56" y1="278" x2="664" y2="278" stroke="#e2e8f0"/>
+  <text x="56" y="308" font-size="17" fill="#0f172a">共同支出 CNY 563.23，人均 281.62</text>
+  <text x="620" y="308" font-size="20" font-weight="bold" fill="#0f766e" text-anchor="end">Bob → Alice ¥127.94</text>
+</svg>

@@ -73,8 +73,13 @@ def build_cell(rec, defaults=None):
         raise SystemExit(f"记录缺少必填字段 (事项/币种/金额/付款人): {rec}")
     if cell.get("币种") == ["CNY"]:
         cell["汇率"] = 1.0
-    elif "汇率" not in cell:
-        cell["汇率"] = 0.0
+    else:
+        rate = cell.get("汇率")
+        if not isinstance(rate, (int, float)) or rate <= 0:
+            raise SystemExit(
+                "外币记录缺有效汇率，拒绝写入以免静默算成 0：" + json.dumps(rec, ensure_ascii=False)
+                + "\n  传 --ledger 自动带出当轮汇率，或在记录里补上『汇率』。"
+            )
     return cell
 
 

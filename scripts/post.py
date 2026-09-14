@@ -127,6 +127,8 @@ def main():
 
     uploaded = 0
     warnings = []
+    # created 与 records 按下标一一对应：这依赖 record-batch-create 返回的
+    # record_id_list 与输入记录同序。该假设由 scripts/verify_attachment_order.py 定期验证。
     for rec_id, rec in zip(created, records):
         image = rec.get("image")
         if not image:

@@ -8,9 +8,9 @@
 
 结算币种固定人民币，原币支持 CNY / HKD。名字是德语的「结算、扯平」，发音大致 *奥斯-格莱希*。
 
-![AUSGLEICH 结算样例](docs/sample-settlement.svg)
+![AUSGLEICH 演示：合成数据 → 结算结果](docs/demo.gif)
 
-<sub>合成数据生成，可复现：`python3 scripts/make_demo.py`。</sub>
+<sub>合成数据生成、真实运行输出；`python3 scripts/make_demo.py` 出数据，`python3 scripts/make_gif.py` 重录这张 GIF。</sub>
 
 ---
 
@@ -176,6 +176,12 @@ python3 scripts/make_demo.py
 
 产物：`examples/sample-settlement.json`、`docs/sample-settlement.svg`、`docs/sample-settlement.html`。
 
+重录首屏 GIF（依赖 Pillow）：
+
+```bash
+python3 scripts/make_gif.py
+```
+
 口径回归测试（四舍五入、缺汇率报错、双入口对称）：
 
 ```bash
@@ -195,6 +201,7 @@ scripts/settle.py            读结算结果
 scripts/rate.py              查 HKD->CNY 汇率
 scripts/settlement.py        纯函数结算核心（demo / 测试复用）
 scripts/make_demo.py         离线合成 demo
+scripts/make_gif.py          把 demo 输出录成首屏 GIF（依赖 Pillow）
 references/schema.md         表结构与建表命令
 references/parse-prompt.md   截图识别规范
 examples/                    合成样例产物
